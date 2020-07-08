@@ -1,0 +1,59 @@
+<section class="hero is-primary fondo">
+    <div class="columns is-vcentered formulario my-3">
+    <br>
+    <br>
+        <div class="column"></div>
+        <div class="column my-6 has-text-centered has-background-white">
+            <p class="subtitle is-4 has-text-dark">Hacer una reservación</p>
+            <hr>
+            <%= form_for @reserva do |f| %>
+            <div class="field">
+                <label class="label">Nombre y apellido</label>
+                <div class="control">
+                    <%= f.text_field :nombre, autofocus: true, class: "input"%>
+                </div>
+            </div> 
+            <br>
+            <div class="field">
+                <label class="label">Telefono</label>
+                <div class="control">
+                    <%= f.number_field :telefono, autofocus: true, class: "input"%>
+                </div>
+            </div>
+            <br>
+            <div class="columns">
+                <div class="column">            
+                    <div class="field">
+                        <label class="label">Fecha</label>
+                        <div class="control">
+                            <%= f.date_field :fecha, autofocus: true, class: "date input"%>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">               
+                    <div class="field">
+                        <label class="label">Hora</label>
+                        <div class="control">
+                            <%= f.time_field :hora, autofocus: true, class: "input", value: "15:00:00", max: "23:00:00", min: "7:00:00", step: "1"%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="columns mb-2">
+                    <div class="column">
+                        <div class="control">
+                            <%= f.submit(@reserva.new_record? ? "Reservar" : "Actualizar", class: "button is-link is-light is-fullwidth", data: {confirm: "Una vez creada la reserva no podrás cancelarla ¿Deseas continuar con la reservación?"})%>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="control">
+                            <%= link_to "Cancelar", root_path, class: "button is-danger is-light is-fullwidth" %>
+                        </div>    
+                    </div>
+            </div>
+            <% end %>
+        </div>
+        <div class="column"></div>
+    </div>
+</section>

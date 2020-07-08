@@ -1,0 +1,68 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bulma";
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+*{
+    font-family: 'Fjalla One', sans-serif !important;
+}
+
+.fondo{
+    background-attachment: fixed;
+    background: linear-gradient(135deg, #16A085 0%, #27AE60 100%) !important;
+    background-size: cover;
+}
+
+/* NAV */
+
+.btn-nav{
+    transition: background-color 1s ease;
+    transition: color 2s ease;
+    border-radius: 3px;
+}
+
+/* FIN NAV */
+
+/* HOME */
+.titulo{
+    text-shadow: 1px 1px 5px #566573;
+}
+
+.reserva{
+    transition: all 1s ease;
+}
+
+.reserva:hover,
+.reserva:focus{
+    animation: pulse 1s;
+    box-shadow: 0 0 0 1em rgba(#fff,0);
+}
+
+@keyframes pulse {
+0% { box-shadow: 0 0 0 0 #2C3E50; }
+}
+/* FIN HOME */ 
+
+/* INDEX RESERVA */
+.column{
+    border-radius: 3px;
+}
+
+thead, tbody{
+    text-align: center;
+}
+
+/* FIN RESERVA */ 

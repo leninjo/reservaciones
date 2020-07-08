@@ -1,0 +1,45 @@
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <% if user_signed_in? %>
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">Reservaciones</a>
+        <div class="navbar-dropdown">
+            <%= link_to "Ver todas", bookings_path, class: "navbar-item" %>
+            <%= link_to "Crear", new_booking_path, class: "navbar-item" %>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "button is-danger is-outlined" %>
+        </div>
+      </div>
+    </div>
+    <% else %>
+    <div class="navbar-start">
+      <%= link_to "Inicio", root_path, class: "navbar-item btn-nav" %>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <%= link_to "Admin", new_user_session_path, class: "button is-light" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</nav>

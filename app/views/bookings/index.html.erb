@@ -1,0 +1,32 @@
+<section class="hero">
+    <div class="columns is-vcentered my-3">
+        <div class="column"></div>
+        <div class="column is-three-quarters">
+            <table class="table is-fullwidth is-striped">
+                <p class="subtitle is-2 has-text-centered">Todas las reservaciones</p>
+                <thead>
+                    <tr>
+                        <th>Responsable</th>
+                        <th>Telefono</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th colspan="2">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @reservas.each do |reserva| %>
+                    <tr>
+                        <td><%= reserva.nombre%></td>
+                        <td><%= reserva.telefono%></td>
+                        <td><%= reserva.fecha%></td>
+                        <td><%= reserva.hora%></td>
+                        <td><%= link_to "Editar", edit_booking_path(reserva), class: "has-text-success	"%></td>
+                        <td><%= link_to "Eliminar", booking_path(reserva), method: :delete, class: "has-text-danger", data: {confirm: "Deseas eliminar esta reservación?"}%></td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+        <div class="column"></div>
+    </div>
+</section>
