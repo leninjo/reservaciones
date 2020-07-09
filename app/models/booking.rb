@@ -6,4 +6,14 @@ class Booking < ApplicationRecord
 
   validates :telefono, :length => { :is => 8, 
     message: " debe tener 8 digitos."} 
+
+  before_save :pago_monto 
+
+  def pago_monto
+    if self.hora > 18 
+      self.monto = 180
+    else 
+      self.monto = 150
+    end 
+  end 
 end

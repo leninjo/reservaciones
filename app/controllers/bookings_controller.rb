@@ -3,8 +3,13 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create]
 
   def index 
-    @reservas = Booking.all     
+    @reservas = Booking.where("fecha LIKE ?", "%#{params[:search]}%").paginate(page: params[:page], per_page: 7)
   end 
+
+  #buscar 
+  # def search
+    # @busquedas = Booking.where("nombre LIKE ?", "%" + params[:q] + "%")
+  # end 
 
   #crear 
   def new 
@@ -13,8 +18,8 @@ class BookingsController < ApplicationController
 
   def create 
     @reserva = Booking.create(booking_params)
-    if @reserva.save 
-      flash[:notice] = "Reserva creada"
+    if @reserva.save  
+      flash[:notice] = "¡Reservación exitosa! Total a cancelar Q#{@reserva.monto}"
       redirect_to root_path
     else
         flash.now[:notice] = @reserva.errors.full_messages[0]
@@ -39,7 +44,7 @@ class BookingsController < ApplicationController
 
   private 
   def booking_params
-      params.require(:booking).permit(:nombre, :telefono, :fecha, :hora)      
+      params.require(:booking).permit(:nombre, :telefono, :fecha, :hora, :monto)      
   end
 
   def set_booking

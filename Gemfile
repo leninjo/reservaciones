@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bulma-rails', '~> 0.9.0'
 gem 'jquery-rails', '~> 4.4'
 gem 'devise', '~> 4.7', '>= 4.7.2'
+gem 'will_paginate-bulma'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

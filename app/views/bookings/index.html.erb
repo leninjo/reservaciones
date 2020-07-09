@@ -1,15 +1,29 @@
 <section class="hero">
-    <div class="columns is-vcentered my-3">
+    <div class="columns my-3">
         <div class="column"></div>
         <div class="column is-three-quarters">
+            <p class="subtitle is-2 has-text-centered">Todas las reservaciones</p>
+            <div class="field is-grouped is-grouped-right">
+                <%= form_tag bookings_path, method: :get do %>
+                <div class="field has-addons">
+                    <div class="control">
+                        <%= date_field_tag :search, params[:search], placeholder: "dd/mm/aaa", class: "input"%>
+                    </div>
+                    <div class="control">
+                        <%= submit_tag "Buscar por fecha", class: "button is-warning"%>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+            <br>
             <table class="table is-fullwidth is-striped">
-                <p class="subtitle is-2 has-text-centered">Todas las reservaciones</p>
                 <thead>
                     <tr>
                         <th>Responsable</th>
                         <th>Telefono</th>
                         <th>Fecha</th>
                         <th>Hora</th>
+                        <th>Monto</th>
                         <th colspan="2">Acciones</th>
                     </tr>
                 </thead>
@@ -20,12 +34,14 @@
                         <td><%= reserva.telefono%></td>
                         <td><%= reserva.fecha%></td>
                         <td><%= reserva.hora%></td>
+                        <td>Q<%= reserva.monto%></td>
                         <td><%= link_to "Editar", edit_booking_path(reserva), class: "has-text-success	"%></td>
                         <td><%= link_to "Eliminar", booking_path(reserva), method: :delete, class: "has-text-danger", data: {confirm: "Deseas eliminar esta reservación?"}%></td>
                     </tr>
                     <% end %>
                 </tbody>
             </table>
+            <%= will_paginate @reservas, renderer: BulmaPagination::Rails, :previous_label => t("anterior"), :next_label => t("siguiente"), class: 'is-rounded is-centered' %>
         </div>
         <div class="column"></div>
     </div>
