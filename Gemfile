@@ -25,6 +25,7 @@ gem 'bulma-rails', '~> 0.9.0'
 gem 'jquery-rails', '~> 4.4'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'will_paginate-bulma'
+gem 'material_design_icons', '~> 4.1', '>= 4.1.95'
 
 
 # Use Active Storage variant

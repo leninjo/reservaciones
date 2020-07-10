@@ -9,9 +9,9 @@ class Booking < ApplicationRecord
 
   def self.search(search)
     if search 
-      where(["fecha @> ?::date", "%#{search}%"])
+      where(["fecha = ?", "#{search}"])
     else
-      all 
+      Booking.all 
     end 
   end 
   

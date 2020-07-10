@@ -11,7 +11,8 @@
                         <%= date_field_tag :search, params[:search], placeholder: "dd/mm/aaa", class: "input"%>
                     </div>
                     <div class="control">
-                        <%= submit_tag "Buscar por fecha", class: "button is-warning"%>
+                        <%= submit_tag "Buscar por fecha", class: "mdi mdi-search button is-warning"%>
+                        <%= link_to "", bookings_path, class: "mdi mdi-broom has-text-dark mdi-24px limpiar" %>
                     </div>
                     <% end %>
                 </div>
