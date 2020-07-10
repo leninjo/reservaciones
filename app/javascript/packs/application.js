@@ -7,6 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("jquery")
+
 //= require jquery3
 //= require popper
 
@@ -17,12 +19,8 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-document.addEventListener('DOMContentLoaded', () => {
-    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-      $notification = $delete.parentNode;
-  
-      $delete.addEventListener('click', () => {
-        $notification.parentNode.removeChild($notification);
-      });
-   });
+$(document).ready(function(){
+  setTimeout(function() {
+    $('#alerta').fadeOut(1500)
+  }, 3000);
 });

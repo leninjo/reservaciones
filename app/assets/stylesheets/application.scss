@@ -65,4 +65,14 @@ thead, tbody{
     text-align: center;
 }
 
+tr:hover{
+    background-color: #EAEDED;
+}
+
 /* FIN RESERVA */ 
+
+/* MESSAGE */ 
+.alerta{
+    position: absolute;
+    text-align: center;
+}

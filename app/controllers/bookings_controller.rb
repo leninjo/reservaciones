@@ -32,8 +32,13 @@ class BookingsController < ApplicationController
   end 
 
   def update 
-    @reserva.update(booking_params)
-    redirect_to bookings_path
+    if @reserva.update(booking_params)
+      flash[:notice] = "¡Reservación actualizada!"
+      redirect_to bookings_path
+    else
+      flash.now[:notice] = @reserva.errors.full_messages[0]
+      render 'edit'
+    end 
   end 
 
   #eliminar 

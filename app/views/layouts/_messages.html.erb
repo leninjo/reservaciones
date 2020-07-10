@@ -1,8 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid alerta" id="alerta">
     <% flash.each do |name, msg| %>
-      <div class="notification is-danger is-light" role="alert">
+      <div class="notification is-info is-light" role="alert">
           <%= msg %>   
-        <button class="delete"></button>
       </div>
     <% end %>
 </div>
