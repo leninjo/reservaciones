@@ -9,7 +9,7 @@ class Booking < ApplicationRecord
 
   def self.search(search)
     if search 
-      where(["fecha LIKE ?", "_#{search}_"])
+      where(["fecha @> ?::date", "%#{search}%"])
     else
       all 
     end 
