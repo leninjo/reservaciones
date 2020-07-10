@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create]
 
   def index 
-    @reservas = Booking.where("fecha LIKE ?", "%#{params[:search]}%").paginate(page: params[:page], per_page: 7)
+    @reservas = Booking.where("fecha ILIKE ?", "%#{params[:search]}%").paginate(page: params[:page], per_page: 7)
   end 
 
   #buscar 
