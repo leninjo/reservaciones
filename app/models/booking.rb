@@ -7,6 +7,14 @@ class Booking < ApplicationRecord
   validates :telefono, :length => { :is => 8, 
     message: " debe tener 8 digitos."} 
 
+  def self.search(search)
+    if search 
+      where(["fecha LIKE ?", "_#{search}_"])
+    else
+      all 
+    end 
+  end 
+  
   before_save :pago_monto 
 
   def pago_monto
