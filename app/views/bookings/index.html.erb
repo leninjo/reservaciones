@@ -3,20 +3,31 @@
         <div class="column"></div>
         <div class="column is-three-quarters">
             <p class="subtitle is-2 has-text-centered">Todas las reservaciones</p>
-            <div class="field is-grouped is-grouped-right">
-            <!--<%= link_to "Exportar a PDF", root_path, class: "button is-primary"%>-->
-                <%= form_tag bookings_path, method: :get do %>
-                <div class="field has-addons">
-                    <div class="control">
-                        <%= date_field_tag :search, params[:search], placeholder: "dd/mm/aaa", class: "input"%>
+            <div class="container">
+                <div class="field is-pulled-left">
+                    <div class="tags are-medium has-addons">
+                        <span class="tag my-1">Reservaciones</span>
+                        <span class="tag is-link my-1"><%= @reservas.count %></span>
+                        <span class="tag my-1">Ganancias</span>
+                        <span class="tag is-link my-1">Q<%= @reservas.sum(:monto) %></span>
                     </div>
-                    <div class="control">
-                        <%= submit_tag "Buscar por fecha", class: "mdi mdi-search button is-warning"%>
-                        <%= link_to "", bookings_path, class: "mdi mdi-broom has-text-dark mdi-24px limpiar" %>
+                </div>
+                <div class="field is-pulled-right">
+                <!--<%= link_to "Exportar a PDF", root_path, class: "button is-primary"%>-->
+                    <%= form_tag bookings_path, method: :get do %>
+                    <div class="field has-addons">
+                        <div class="control">
+                            <%= date_field_tag :search, params[:search], placeholder: "dd/mm/aaa", class: "input"%>
+                        </div>
+                        <div class="control">
+                            <%= submit_tag "Buscar por fecha", class: "mdi mdi-search button is-link is-light"%>
+                            <%= link_to "", bookings_path, class: "mdi mdi-broom has-text-dark mdi-24px limpiar" %>
+                        </div>
+                        <% end %>
                     </div>
-                    <% end %>
                 </div>
             </div>
+            <br>
             <br>
             <table class="table is-fullwidth is-striped">
                 <thead>
