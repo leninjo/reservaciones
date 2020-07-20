@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   resources :bookings, except: [:show] 
-
+  resources 'reports'
 end
