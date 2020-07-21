@@ -4,8 +4,9 @@
         <div class="column is-three-quarters">
             <p class="subtitle is-2 has-text-centered">Estadisticas</p>
                 <div class="container">
-                <p class="subtitle is-5 mb-0">Reservaciones de los ultimos dias</p>
-                <%= area_chart Booking.group_by_day(:fecha).count, colors: ["#1BA9A9", "#8E44AD"] %>
+                <p class="subtitle is-5 mb-0">Ultimas reservaciones</p>
+                <%= area_chart Booking.group_by_day(:fecha).count, colors: ["#1BA9A9", "#8E44AD"] %>                
+                <p>Día con mas partidos</p>
                 </div>
         </div>
         <div class="column"></div>

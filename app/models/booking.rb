@@ -25,5 +25,8 @@ class Booking < ApplicationRecord
     end 
   end 
 
+  def dia_max
+    Count.select([:fecha, Count.arel_table[:fecha].maximum])
+  end 
 
 end
