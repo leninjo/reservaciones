@@ -15,11 +15,11 @@
     <% if user_signed_in? %>
     <div class="navbar-start">
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">Reservaciones</a>
+        <a class="navbar-link">Administrar</a>
         <div class="navbar-dropdown">
-            <%= link_to "Ver todas", bookings_path, class: "navbar-item" %>
-            <%= link_to "Crear", new_booking_path, class: "navbar-item" %>
-            <%= link_to "Estadisticas", reports_path, class: "navbar-item" %>
+            <%= link_to "Reservaciones", bookings_path, class: "navbar-item" %>
+            <%= link_to "Estadisticas", statistics_path, class: "navbar-item" %>
+            <%= link_to "Reportes", reports_path, class: "navbar-item" %>
         </div>
       </div>
     </div>

@@ -1,0 +1,18 @@
+<section class="hero">
+    <div class="columns my-3">
+        <div class="column"></div>
+        <div class="column is-three-quarters">
+            <p class="subtitle is-2 has-text-centered">Estadisticas</p>
+                <div class="container">
+                <p class="subtitle is-5 mb-0">Ultimas reservaciones</p>
+                <%= area_chart Booking.group_by_day(:fecha).count, colors: ["#1BA9A9", "#8E44AD"] %>                
+                <p>Día con mas partidos <%= @reservas.group(:fecha).count(:fecha) %></p>
+
+                <!--select fecha, max(dia) from 
+(select fecha, count(fecha) as dia 
+from bookings group by fecha);-->
+                </div>
+        </div>
+        <div class="column"></div>
+    </div>
+</section>

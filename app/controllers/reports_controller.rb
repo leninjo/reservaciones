@@ -1,6 +1,9 @@
 class ReportsController < ApplicationController 
+  
   def index 
-    @reservas = Booking.all 
+    s = params[:s]
+    e = params[:e]
+    @reservas = Booking.where("DATE(fecha) BETWEEN ? AND ?", s, e)
   end 
   
 end 

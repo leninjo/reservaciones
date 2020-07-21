@@ -4,12 +4,7 @@ class BookingsController < ApplicationController
 
   def index 
     @reservas = Booking.search(params[:search]).paginate(page: params[:page], per_page: 7)
-  end 
-
-  #buscar 
-  # def search
-    # @busquedas = Booking.where("nombre LIKE ?", "%" + params[:q] + "%")
-  # end 
+  end  
 
   #crear 
   def new 
