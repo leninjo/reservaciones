@@ -16,6 +16,7 @@
 @import "bulma";
 @import "materialdesignicons";
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Kaushan+Script&display=swap');
 
 *{
     font-family: 'Fjalla One', sans-serif !important;
@@ -140,13 +141,19 @@ li.pagination-previous >a{
     height: 100px;
     border-radius: 5px;
     box-shadow: 0 19px 38px rgba(36, 36, 36, 0.3), 0 15px 12px rgba(31, 30, 30, 0.22);
+    transition: 1s ease;
 }
 
 .card-content > p.first{
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .card-content > p{
+    font-family: 'Chewy', cursive !important;
     font-size: 45px;
     line-height: 50px;
+}
+
+.card-content:hover{
+    filter: blur(1px);
 }
