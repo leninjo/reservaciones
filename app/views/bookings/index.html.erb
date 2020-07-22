@@ -44,7 +44,7 @@
                     <tr>
                         <td><%= reserva.nombre%></td>
                         <td><%= reserva.telefono%></td>
-                        <td><%= reserva.fecha%></td>
+                        <td><%= reserva.fecha.strftime("%d/%m/%Y")%></td>
                         <td><%= reserva.hora%></td>
                         <td>Q<%= reserva.monto%></td>
                         <td><%= link_to "Editar", edit_booking_path(reserva), class: "has-text-success	"%></td>
@@ -53,7 +53,9 @@
                     <% end %>
                 </tbody>
             </table>
-            <%= will_paginate @reservas, renderer: BulmaPagination::Rails, :previous_label => t("anterior"), :next_label => t("siguiente"), class: 'is-rounded is-centered' %>
+            <div>
+                <%= will_paginate @reservas, renderer: BulmaPagination::Rails, :previous_label => t("anterior"), :next_label => t("siguiente"), class: 'is-rounded is-centered' %>
+            </div>
         </div>
         <div class="column"></div>
     </div>

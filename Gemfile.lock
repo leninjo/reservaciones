@@ -236,6 +236,7 @@ DEPENDENCIES
   chartkick (~> 3.3, >= 3.3.1)
   devise (~> 4.7, >= 4.7.2)
   groupdate
+  i18n (~> 1.8, >= 1.8.3)
   jbuilder (~> 2.7)
   jquery-rails (~> 4.4)
   listen (~> 3.2)

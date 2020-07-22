@@ -99,3 +99,54 @@ tr:hover{
     position: absolute;
     text-align: center;
 }
+
+/* PAGINACION */
+li.pagination-link.is-current{
+    background-color: #D6DBDF !important;
+    color: black;
+    border: none;
+}
+
+li.pagination-next >a{
+    color: #2C3E50;
+}
+
+li.pagination-previous >a{
+    color: #2C3E50;
+}
+
+/* Paginacion */ 
+
+/* Cards */ 
+.card-header{
+    height: 75px;
+    background-color: #2E4053;
+    border-width: 0.5px;
+    border-bottom: solid;
+    border-color: whitesmoke;
+    border-radius: 5px;
+}
+.card-header-title > p{
+    font-size: 25px !important;
+    text-align: center !important;
+    color: white;
+}
+
+.card-content{
+    background-attachment: fixed;
+    background: linear-gradient(135deg, #16A085 0%, #1E8449 100%) !important;
+    background-size: cover;
+    color: white;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 0 19px 38px rgba(36, 36, 36, 0.3), 0 15px 12px rgba(31, 30, 30, 0.22);
+}
+
+.card-content > p.first{
+    font-size: 35px;
+}
+
+.card-content > p{
+    font-size: 45px;
+    line-height: 50px;
+}

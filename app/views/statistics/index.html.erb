@@ -1,18 +1,85 @@
 <section class="hero">
     <div class="columns my-3">
-        <div class="column"></div>
-        <div class="column is-three-quarters">
-            <p class="subtitle is-2 has-text-centered">Estadisticas</p>
-                <div class="container">
-                <p class="subtitle is-5 mb-0">Ultimas reservaciones</p>
-                <%= area_chart Booking.group_by_day(:fecha).count, colors: ["#1BA9A9", "#8E44AD"] %>                
-                <p>Día con mas partidos <%= @reservas.group(:fecha).count(:fecha) %></p>
+        <div class="column is-full">
+            <p class="subtitle is-2 has-text-centered">Estadisticas de Reservaciones</p>
+            <div class="container">
+            <%= area_chart Booking.group_by_day(:fecha).count, colors: ["#1BA9A9", "#8E44AD"] %>                
+            </div>
+                <div class="columns mx-2 my-2">
+                    <div class="column is-2">
+                        <div class="card has-text-black">
+                            <div class="card-header">
+                                <div class="card-header-title has-text-black">
+                                <p>Día con mas reservaciones</p>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p class="has-text-centered first"><%= @reservas.dia_max.strftime("%d/%m/%Y")%></p>
+                            </div>
+                        </div>
+                    </div>
 
-                <!--select fecha, max(dia) from 
-(select fecha, count(fecha) as dia 
-from bookings group by fecha);-->
+                    <div class="column is-2">
+                        <div class="card has-text-black">
+                            <div class="card-header">
+                                <div class="card-header-title has-text-black">
+                                <p>Hora preferida</p>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p class="has-text-centered"><%= @reservas.hora_pref%></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-2">
+                        <div class="card has-text-black">
+                            <div class="card-header">
+                                <div class="card-header-title has-text-black">
+                                <p>Record por día</p>  
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p class="has-text-centered"><%= @reservas.dia%></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-2">
+                        <div class="card has-text-black">
+                            <div class="card-header">
+                                <div class="card-header-title has-text-black">
+                                <p>Hoy</p>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p class="has-text-centered"><%= @reservas.reservas_hoy%></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-2">
+                        <div class="card has-text-black">
+                            <div class="card-header">
+                                <div class="card-header-title has-text-black">
+                                <p>Últimos 7 días</p>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p class="has-text-centered"><%= @reservas.reservas_l%></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-2">
+                        <div class="card has-text-black">
+                            <div class="card-header">
+                                <div class="card-header-title has-text-black">
+                                <p>Próximos 7 días</p>                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p class="has-text-centered"><%= @reservas.reservas_n%></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
         </div>
-        <div class="column"></div>
     </div>
 </section>

@@ -47,3 +47,8 @@ en:
               blank: " no puede estar vacia."
             fecha:
               blank: " no puede estar vacia."
+
+en:
+  dates:
+    formats:
+      euro: "%d/%m/%y"
