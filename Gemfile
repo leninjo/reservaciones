@@ -28,8 +28,7 @@ gem 'will_paginate-bulma'
 gem 'material_design_icons', '~> 4.1', '>= 4.1.95'
 gem 'chartkick', '~> 3.3', '>= 3.3.1'
 gem 'groupdate'
-gem 'by_star', '~> 3.0'
-gem 'chronic', '~> 0.10.2'
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

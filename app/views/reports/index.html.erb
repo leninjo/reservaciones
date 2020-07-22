@@ -3,23 +3,27 @@
         <div class="column"></div>
         <div class="column is-three-quarters">
             <p class="subtitle is-2 has-text-centered">Reportes</p>
-                <div class="container">
-                    <div class="field is-pulled-right">
-                <!--<%= link_to "Exportar a PDF", root_path, class: "button is-primary"%>-->
-                    <%= form_tag reports_path, method: :get do %>
-                    <div class="field has-addons">
-                        <div class="control">
-                            <%= date_field_tag :search_r, params[:s], placeholder: "dd/mm/aaaa", class: "input"%>
-                            <%= date_field_tag :search_r, params[:e], placeholder: "dd/mm/aaaa", class: "input"%>
-                        </div>
-                        <div class="control">
-                            <%= submit_tag "Buscar", class: "mdi mdi-search button is-link is-light"%>
-                            <%= link_to "", bookings_path, class: "mdi mdi-broom has-text-dark mdi-24px limpiar" %>
-                        </div>
-                        <% end %>
+            <div class="container">
+                <div class="field is-pulled-right">
+            <!--<%= link_to "Exportar a PDF", root_path, class: "button is-primary"%>-->
+                <%= form_tag reports_path, method: :get do %>
+                <div class="field has-addons">
+                    <div class="control">
+                        <%= date_field_tag :s, params[:s], placeholder: "Inicio", class: "input" %>
                     </div>
+                    <div class="control">
+                        <%= date_field_tag :e, params[:e], placeholder: "Fin", class: "input" %>
+                    </div>
+                    <div class="control">
+                        <%= submit_tag "Buscar por rango", class: "mdi mdi-search button is-link is-light"%>
+                        <%= link_to "", reports_path, class: "mdi mdi-broom has-text-dark mdi-24px limpiar" %>
                     </div>
                 </div>
+                <% end %>
+                </div>
+            </div>
+            <br>
+            <br>
             <table class="table is-fullwidth is-striped">
                 <thead>
                     <tr>
@@ -45,6 +49,7 @@
                     <% end %>
                 </tbody>
             </table>
+            <%= will_paginate @reservas, renderer: BulmaPagination::Rails, :previous_label => t("anterior"), :next_label => t("siguiente"), class: 'is-rounded is-centered' %>
         </div>
         <div class="column"></div>
     </div>
