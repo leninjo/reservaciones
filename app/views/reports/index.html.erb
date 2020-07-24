@@ -23,7 +23,7 @@
                         <%= date_field_tag :e, params[:e], placeholder: "Fin", class: "input" %>
                     </div>
                     <div class="control">
-                        <%= submit_tag "Buscar por rango", class: "mdi mdi-search button is-success is-light"%>
+                        <%= submit_tag "Buscar por rango", class: "mdi mdi-search button is-success"%>
                         <%= link_to "", reports_path, class: "mdi mdi-broom has-text-dark mdi-24px limpiar" %>
                     </div>
                 </div>
@@ -47,14 +47,14 @@
                 <tbody>
                     <% @reservas.each do |reserva| %>
                     <tr>
-                        <td><%= check_box_tag nil, nil, reserva.completado?, data: {reflex: "click->CompletadoReflex#complet", id: reserva.id}%></td>
+                        <td><%= check_box_tag nil, nil, reserva.completado?, data: {reflex: "click->CompletadoReflex#complet", id: reserva.id}, class: "reports"%></td>
                         <td><%= reserva.nombre%></td>
                         <td><%= reserva.telefono%></td>
                         <td><%= reserva.fecha.strftime("%d/%m/%Y")%></td>
                         <td><%= reserva.hora%></td>
                         <td>Q<%= reserva.monto%></td>
-                        <td><%= link_to "Editar", edit_booking_path(reserva), class: "has-text-success	"%></td>
-                        <td><%= link_to "Eliminar", booking_path(reserva), method: :delete, class: "has-text-danger", data: {confirm: "Deseas eliminar esta reservación?"}%></td>
+                        <td><%= link_to "Editar", edit_booking_path(reserva), class: "button is-warning is-small is-rounded btn-accion"%></td>
+                        <td><%= link_to "Eliminar", booking_path(reserva), method: :delete, class: "button is-danger is-small is-rounded btn-accion", data: {confirm: "¿Desea eliminar la reservación de #{reserva.nombre}?"}%></td>
                     </tr>
                     <% end %>
                 </tbody>

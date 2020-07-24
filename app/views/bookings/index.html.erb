@@ -2,14 +2,14 @@
     <div class="columns my-3">
         <div class="column"></div>
         <div class="column is-three-quarters">
-            <p class="subtitle is-2 has-text-centered">Todas las reservaciones <%= link_to "", new_booking_path, class: "mdi mdi-plus-box has-text-primary mdi-36px limpiar" %></p>
+            <p class="subtitle is-2 has-text-centered">Todas las reservaciones <%= link_to "", new_booking_path, class: "mdi mdi-plus-circle-multiple-outline has-text-primary mdi-36px limpiar" %></p>
             <div class="container">
                 <div class="field is-pulled-left">
                     <div class="tags are-medium has-addons">
                         <span class="tag my-1">Reservaciones</span>
-                        <span class="tag is-link my-1"><%= @reservas.count %></span>
+                        <span class="tag is-primary my-1"><%= @reservas.count %></span>
                         <span class="tag my-1">Ganancias</span>
-                        <span class="tag is-link my-1">Q<%= @reservas.sum(:monto) %></span>
+                        <span class="tag is-primary my-1">Q<%= @reservas.sum(:monto) %></span>
                     </div>
                 </div>
                 <div class="field is-pulled-right">
@@ -19,7 +19,7 @@
                             <%= date_field_tag :search, params[:search], placeholder: "dd/mm/aaa", class: "input"%>
                         </div>
                         <div class="control">
-                            <%= submit_tag "Buscar por fecha", class: "mdi mdi-search button is-link is-light"%>
+                            <%= submit_tag "Buscar por fecha", class: "mdi mdi-search button is-primary"%>
                             <%= link_to "", bookings_path, class: "mdi mdi-broom has-text-dark mdi-24px limpiar" %>
                         </div>
                         <% end %>
@@ -49,8 +49,8 @@
                         <td><%= reserva.fecha.strftime("%d/%m/%Y")%></td>
                         <td><%= reserva.hora%></td>
                         <td>Q<%= reserva.monto%></td>
-                        <td><%= link_to "Editar", edit_booking_path(reserva), class: "has-text-success	"%></td>
-                        <td><%= link_to "Eliminar", booking_path(reserva), method: :delete, class: "has-text-danger", data: {confirm: "Deseas eliminar esta reservación?"}%></td>
+                        <td><%= link_to "Editar", edit_booking_path(reserva), class: "button is-warning is-small is-rounded btn-accion"%></td>
+                        <td><%= link_to "Eliminar", booking_path(reserva), method: :delete, class: "button is-danger is-small is-rounded btn-accion", data: {confirm: "Deseas eliminar esta reservación?"}%></td>
                     </tr>
                     <% end %>
                 </tbody>
