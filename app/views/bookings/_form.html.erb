@@ -13,27 +13,13 @@
                     <%= f.text_field :nombre, autofocus: true, class: "input"%>
                 </div>
             </div> 
+            <br>
             <div class="field">
                 <label class="label">Telefono</label>
                 <div class="control">
                     <%= f.number_field :telefono, autofocus: true, class: "input"%>
                 </div>
             </div>
-            <br>
-            <% if user_signed_in? %>
-            <div class="field">
-                <div class="control">
-                    <label class="radio">
-                        <input type="radio">
-                        <span>Completado</span>
-                    </label>  
-                    <label class="radio">
-                        <input type="radio">
-                        No Completado
-                    </label>
-                </div>
-            </div>
-            <% end %>
             <br>
             <div class="columns">
                 <div class="column">            
