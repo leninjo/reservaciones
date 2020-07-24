@@ -35,6 +35,7 @@
             <table class="table is-fullwidth is-striped">
                 <thead>
                     <tr>
+                        <th>Completado</th>
                         <th>Responsable</th>
                         <th>Telefono</th>
                         <th>Fecha</th>
@@ -46,6 +47,7 @@
                 <tbody>
                     <% @reservas.each do |reserva| %>
                     <tr>
+                        <td><%= check_box_tag nil, nil, reserva.completado?, data: {reflex: "click->CompletadoReflex#complet", id: reserva.id}%></td>
                         <td><%= reserva.nombre%></td>
                         <td><%= reserva.telefono%></td>
                         <td><%= reserva.fecha.strftime("%d/%m/%Y")%></td>

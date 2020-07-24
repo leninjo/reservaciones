@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create]
 
   def index 
-    @reservas = Booking.search(params[:search]).paginate(page: params[:page], per_page: 7)
+    @reservas = Booking.search(params[:search]).order("fecha DESC").paginate(page: params[:page], per_page: 7)
   end  
 
   #crear 
@@ -44,7 +44,7 @@ class BookingsController < ApplicationController
 
   private 
   def booking_params
-      params.require(:booking).permit(:nombre, :telefono, :fecha, :hora, :monto)      
+      params.require(:booking).permit(:nombre, :telefono, :fecha, :hora, :completado, :monto)      
   end
 
   def set_booking

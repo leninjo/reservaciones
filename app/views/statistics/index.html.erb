@@ -1,7 +1,7 @@
 <section class="hero">
     <div class="columns my-3">
         <div class="column is-full">
-            <p class="subtitle is-2 has-text-centered">Estadisticas de Reservaciones</p>
+            <p class="subtitle is-2 has-text-centered">Estadisticas</p>
             <div class="container">
             <%= area_chart Booking.group_by_day(:fecha).count, colors: ["#1BA9A9", "#8E44AD"] %>                
             </div>
@@ -23,7 +23,7 @@
                         <div class="card has-text-black">
                             <div class="card-header">
                                 <div class="card-header-title has-text-black">
-                                <p>Hora preferida</p>
+                                <p>Hora de reservaciones preferida</p>
                                 </div>
                             </div>
                             <div class="card-content">
@@ -36,7 +36,7 @@
                         <div class="card has-text-black">
                             <div class="card-header">
                                 <div class="card-header-title has-text-black">
-                                <p>Record por día</p>  
+                                <p>Máximo de reservaciones en un día</p>  
                                 </div>
                             </div>
                             <div class="card-content">
@@ -48,7 +48,7 @@
                         <div class="card has-text-black">
                             <div class="card-header">
                                 <div class="card-header-title has-text-black">
-                                <p>Hoy</p>
+                                <p>Reservaciones para hoy</p>
                                 </div>
                             </div>
                             <div class="card-content">
@@ -60,7 +60,7 @@
                         <div class="card has-text-black">
                             <div class="card-header">
                                 <div class="card-header-title has-text-black">
-                                <p>Últimos 7 días</p>
+                                <p>Reservaciones en los últimos 7 días</p>
                                 </div>
                             </div>
                             <div class="card-content">
@@ -72,7 +72,7 @@
                         <div class="card has-text-black">
                             <div class="card-header">
                                 <div class="card-header-title has-text-black">
-                                <p>Próximos 7 días</p>                                </div>
+                                <p>Reservaciones en los próximos 7 días</p>                                </div>
                             </div>
                             <div class="card-content">
                                 <p class="has-text-centered"><%= @reservas.reservas_n%></p>

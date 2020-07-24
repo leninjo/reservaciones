@@ -26,3 +26,5 @@ $(document).ready(function(){
     $('#alerta').fadeOut(1500)
   }, 3000);
 });
+
+import "controllers"

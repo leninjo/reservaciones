@@ -52,13 +52,18 @@ class Booking < ApplicationRecord
     where("fecha BETWEEN ? AND ?", Date.today, Date.today+7.days).count
   end 
 
+  
   before_save :pago_monto 
 
   def pago_monto
-    if self.hora > 18 
-      self.monto = 180
+    if completado == false 
+      self.monto = 0
     else 
-      self.monto = 150
+      if self.hora > 18 
+        self.monto = 180
+      else 
+        self.monto = 150
+      end
     end 
   end 
 

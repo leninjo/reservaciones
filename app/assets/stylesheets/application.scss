@@ -128,9 +128,10 @@ li.pagination-previous >a{
     border-radius: 5px;
 }
 .card-header-title > p{
-    font-size: 25px !important;
+    font-size: 18px !important;
     text-align: center !important;
     color: white;
+    font-weight: normal !important;
 }
 
 .card-content{
@@ -152,8 +153,15 @@ li.pagination-previous >a{
     font-family: 'Chewy', cursive !important;
     font-size: 45px;
     line-height: 50px;
+    transition: 0.5s ease;
 }
 
-.card-content:hover{
-    filter: blur(1px);
+.card-content:hover > p{
+    text-shadow: 1px 1px 2px black, 0 0 1em #212F3D, 0 0 0.2em #2C3E50;
+    font-size: 46px;
+}
+
+.card-content:hover > p.first{
+    text-shadow: 1px 1px 2px black, 0 0 1em #212F3D, 0 0 0.2em #2C3E50;
+    font-size: 31px;
 }
