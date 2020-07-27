@@ -41,20 +41,20 @@
             </div>
             <br>
             <div class="columns mb-2">
-                    <div class="column">
-                        <div class="control">
-                            <%= f.submit(@reserva.new_record? ? "Reservar" : "Actualizar", class: "button is-link is-light is-fullwidth", data: {confirm: "Una vez hecha la reservación no podrás cancelar ¿Deseas continuar?"})%>
-                        </div>
+                <div class="column">
+                    <div class="control">
+                        <%= f.submit(@reserva.new_record? ? "Reservar" : "Actualizar", class: "button is-link is-fullwidth", data: {confirm: "Una vez hecha la reservación no podrás cancelar ¿Deseas continuar?"})%>
                     </div>
-                    <div class="column">
-                        <div class="control">
-                            <% if user_signed_in? %>
-                                <%= link_to "Cancelar", bookings_path, class: "button is-danger is-light is-fullwidth" %>
-                            <% else %>
-                                <%= link_to "Cancelar", root_path, class: "button is-danger is-light is-fullwidth" %>
-                            <% end %>
-                        </div>    
-                    </div>
+                </div>
+                <div class="column">
+                    <div class="control">
+                        <% if user_signed_in? %>
+                            <%= link_to "Cancelar", bookings_path, class: "button is-danger is-light is-fullwidth" %>
+                        <% else %>
+                            <%= link_to "Cancelar", root_path, class: "button is-danger is-light is-fullwidth" %>
+                        <% end %>
+                    </div>    
+                </div>
             </div>
             <% end %>
         </div>

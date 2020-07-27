@@ -1,10 +1,21 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:new, :create]
-
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :index]
+  
   def index 
-    @reservas = Booking.search(params[:search]).order("fecha DESC").paginate(page: params[:page], per_page: 7)
+    @reservas = Booking.search(params[:search]).order("fecha DESC").paginate(page: params[:page], per_page: 6)
   end  
+
+  def verificar 
+    verf = Booking.where("fecha = ? and hora = ?", params[:fecha], params[:hora]).empty?
+    if verf == true 
+      redirect_to root_path
+      flash[:notice] = "¡DISPONIBLE!"
+    else
+      redirect_to root_path
+      flash[:notice] = "Lo sentimos, no esta disponible..."
+    end  
+  end 
 
   #crear 
   def new 

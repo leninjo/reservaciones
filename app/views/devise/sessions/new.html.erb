@@ -9,19 +9,12 @@
             <div class="label has-text-light">Correo</div>
             <%= f.email_field :email, autofocus: true, class: "input" %>
           </div>
-
+          <br>
           <div class="field">
             <div class="label has-text-light">Contraseña</div>
             <%= f.password_field :password, autofocus: true, class: "input" %>
           </div>
-
-          <% if devise_mapping.rememberable? %>
-            <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
-          <% end %>
-
+        <br>
           <div class="actions">
             <%= f.submit "Iniciar Sesión", class: "button is-link is-light"%>
           </div>

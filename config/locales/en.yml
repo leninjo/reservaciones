@@ -28,11 +28,6 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
-
-en:
-  hello: "Hello world"
-
-
 en:
   activerecord:
     errors:
@@ -47,8 +42,3 @@ en:
               blank: " no puede estar vacia."
             fecha:
               blank: " no puede estar vacia."
-
-en:
-  dates:
-    formats:
-      euro: "%d/%m/%y"

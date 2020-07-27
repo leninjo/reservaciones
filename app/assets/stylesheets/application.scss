@@ -157,18 +157,19 @@ li.pagination-previous >a{
 }
 
 .card-content:hover > p{
-    text-shadow: 1px 1px 2px black, 0 0 1em #212F3D, 0 0 0.2em #2C3E50;
+    text-shadow: 2px 2px 4px black, 0 0 1em #212F3D, 0 0 0.2em #2C3E50;
     font-size: 46px;
 }
 
 .card-content:hover > p.first{
     text-shadow: 1px 1px 2px black, 0 0 1em #212F3D, 0 0 0.2em #2C3E50;
-    font-size: 31px;
+    font-size: 30px;
 }
 
 input[type=checkbox]{
     width: 18px;
     height: 18px;
+    vertical-align: middle !important;
 }
 
 .btn-accion{

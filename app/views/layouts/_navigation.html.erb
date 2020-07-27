@@ -14,6 +14,7 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <% if user_signed_in? %>
     <div class="navbar-start">
+      <%= link_to "Inicio", root_path, class: "navbar-item btn-nav" %>
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">Administrar</a>
         <div class="navbar-dropdown">

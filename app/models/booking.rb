@@ -19,6 +19,10 @@ class Booking < ApplicationRecord
   end 
   #busquedas 
 
+  def self.verificar(fecha, hora)
+    where("fecha = ? and hora = ?", fecha, hora).empty?
+  end 
+
   #dia con mas partidos 
   def self.dia 
     dias = group(:fecha).count(:fecha)

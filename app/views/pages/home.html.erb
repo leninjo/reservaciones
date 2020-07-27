@@ -1,8 +1,25 @@
 <section class="hero fondo">
   <div class="hero-body has-text-centered">
     <div class="container">
-        <p class="subtitle is-1 has-text-centered has-text-light has-text-weight-bold titulo">Cancha Sintentica</p>
+        <p class="subtitle is-1 my-0 has-text-centered has-text-light has-text-weight-bold titulo">Cancha Sintentica</p>
         <p class="subtitle is-3 has-text-centered has-text-light titulo">Cantón Reforma, San Antonio Huista</p>
+        <div class="hero my-3">
+            <div class="field is-pulled-right">
+                <%= form_tag url_for(controller: 'bookings', action: 'verificar'), method: "get" do %>
+                <div class="field has-addons is-pulled-right">
+                    <div class="control">
+                        <%= date_field_tag :fecha, params[:fecha], placeholder: "dd/mm/aaa", class: "input"%>
+                    </div>
+                    <div class="control">
+                        <%= number_field_tag :hora, params[:hora], placeholder: "hora", class: "input"%>
+                    </div>
+                    <div class="control">
+                        <%= submit_tag "¿esta disponible?", class: "mdi mdi-search button is-dark is-light"%>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
         <div class="columns">
             <div class="column">
                 <div class="card">
