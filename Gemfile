@@ -29,7 +29,7 @@ gem 'material_design_icons', '~> 4.1', '>= 4.1.95'
 gem 'chartkick', '~> 3.3', '>= 3.3.1'
 gem 'groupdate'
 gem 'i18n', '~> 1.8', '>= 1.8.3'
-gem 'webpacker', '~> 5.x'
+gem 'webpacker', '~> 5.0'
 
 
 # Use Active Storage variant
