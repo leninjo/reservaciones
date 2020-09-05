@@ -27,7 +27,7 @@ gem 'jquery-rails', '~> 4.4'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'will_paginate-bulma'
 gem 'material_design_icons', '~> 4.1', '>= 4.1.95'
-gem 'chartkick', '~> 3.3', '>= 3.3.1'
+gem 'chartkick', '~> 3.4'
 gem 'groupdate'
 gem 'i18n', '~> 1.8', '>= 1.8.3'
 
